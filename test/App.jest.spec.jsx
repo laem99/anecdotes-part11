@@ -4,6 +4,7 @@ import axiosMock from 'axios'
 import { act } from 'react-dom/test-utils'
 import '@testing-library/jest-dom/extend-expect'
 import App from '../src/App'
+import jest from 'jest'
 
 jest.mock('axios')
 
