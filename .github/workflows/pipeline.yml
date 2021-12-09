@@ -30,8 +30,8 @@ jobs:
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: whispering-hamlet-82003
+          heroku_app_name: secret-woodland-92023
           heroku_email: snap.emt@gmail.com
-          healthcheck: https://whispering-hamlet-82003.herokuapp.com/health
+          healthcheck: https://secret-woodland-92023.herokuapp.com/healthcheck
           rollbackonhealthcheckfailed: true
       - uses: actions/checkout@v2
