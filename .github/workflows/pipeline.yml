@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
+        start: npm run server
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
@@ -23,5 +24,5 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           command: npm run test:e2e
-          start: npm run server|npm start
+          start: npm start
           wait-on: http://localhost:3000
