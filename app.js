@@ -10,5 +10,13 @@ const wares = server.defaults({
 app.use(wares)
 app.use(router)
 
+app.get('/heath', (req, res) => {
+  res.send('ok')
+})
+
+app.get('/version', (req, res) => {
+  res.send('7')
+})
+
 const PORT = process.env.PORT || 3001
 app.listen(PORT)
