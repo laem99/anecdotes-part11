@@ -25,3 +25,14 @@ jobs:
           command: npm run test:e2e
           start: npm run whole
           wait-on: http://localhost:3000
+      - name: deployment
+        if: ${{ github.event_name == 'push' && !contains(join(toJson(github.event.commits.*.message)), '#skip') }}
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: whispering-hamlet-82003
+          heroku_email: snap.emt@gmail.com
+          healthcheck: https://whispering-hamlet-82003.herokuapp.com/
+          checkstring: "ok"
+          rollbackonhealthcheckfailed: true
+      - uses: actions/checkout@v2
