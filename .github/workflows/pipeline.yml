@@ -27,12 +27,12 @@ jobs:
           wait-on: http://localhost:3001
       - name: deployment
         if: ${{ github.event_name == 'push' && !contains(join(toJson(github.event.commits.*.message)), '#skip') }}
-        uses: akhileshns/heroku-deploy@v3.12.12
+        uses: akhileshns/heroku-deploy@79ef2ae4ff9b897010907016b268fd0f88561820
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: vast-sea-59806
           heroku_email: snap.emt@gmail.com
-          healthcheck: https://vast-sea-59806.herokuapp.com/health
+          healthcheck: 'https://vast-sea-59806.herokuapp.com/health'
           checkstring: "ok"
           rollbackonhealthcheckfailed: true
       - uses: actions/checkout@v2
