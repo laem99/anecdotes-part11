@@ -3,6 +3,7 @@ module.exports = {
     'browser': true,
     'node': true,
     'es6': true,
+    'jest/globals': true,
     'cypress/globals': true,
   },
   'extends': [
@@ -17,7 +18,7 @@ module.exports = {
     'sourceType': 'module'
   },
   'plugins': [
-    'react', 'cypress'
+    "react", "jest", "cypress"
   ],
   'rules': {
     'indent': [
