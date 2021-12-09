@@ -23,7 +23,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           command: npm run test:e2e
-          start: npm run whole
+          start: npm run start-prod
           wait-on: http://localhost:3000
       - name: deployment
         if: ${{ github.event_name == 'push' && !contains(join(toJson(github.event.commits.*.message)), '#skip') }}
@@ -33,6 +33,5 @@ jobs:
           heroku_app_name: whispering-hamlet-82003
           heroku_email: snap.emt@gmail.com
           healthcheck: https://whispering-hamlet-82003.herokuapp.com/health
-          checkstring: "ok"
           rollbackonhealthcheckfailed: true
       - uses: actions/checkout@v2
