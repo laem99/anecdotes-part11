@@ -30,8 +30,6 @@ jobs:
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: quiet-sands-98332
+          heroku_app_name: vast-sea-59806
           heroku_email: snap.emt@gmail.com
-          healthcheck: https://quiet-sands-98332.herokuapp.com/healthcheck
-          rollbackonhealthcheckfailed: true
       - uses: actions/checkout@v2
