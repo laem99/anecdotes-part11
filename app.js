@@ -15,7 +15,7 @@ app.get('/heath', (req, res) => {
 })
 
 app.get('/version', (req, res) => {
-  res.send('7')
+  res.send('9')
 })
 
 const PORT = process.env.PORT || 3001
