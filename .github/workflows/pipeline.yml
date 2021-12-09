@@ -15,10 +15,6 @@ jobs:
           node-version: '12.x'
       - name: npm install
         run: npm install
-      - name: backend running
-        run : npm run server
-      - name: frontend running
-        run: npm start
       - name: lint
         run: npm run eslint
       - name: build
