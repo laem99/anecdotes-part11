@@ -32,7 +32,6 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: vast-sea-59806
           heroku_email: snap.emt@gmail.com
-          healthcheck: 'https://vast-sea-59806.herokuapp.com/health'
           checkstring: "ok"
           rollbackonhealthcheckfailed: true
       - uses: actions/checkout@v2
