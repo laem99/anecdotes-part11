@@ -1,20 +1,21 @@
+/* eslint-disable no-case-declarations */
 import anecService from '../services/anecdotes'
 
 const reducer = (state = [], action) => {
   switch (action.type) {
-    case 'NEW_ANEC':
-      return [...state, action.data]
-    case 'VOTE':
-      const id = action.id
-      const anecToChange = state.find(a => a.id === id)
-      const changed = {
-        ...anecToChange,
-        votes: anecToChange.votes + 1
-      }
-      return state.map(anec => anec.id !== id ? anec : changed)
-    case 'INIT_ANECS':
-      return action.data
-    default: return state
+  case 'NEW_ANEC':
+    return [...state, action.data]
+  case 'VOTE':
+    const id = action.id
+    const anecToChange = state.find(a => a.id === id)
+    const changed = {
+      ...anecToChange,
+      votes: anecToChange.votes + 1
+    }
+    return state.map(anec => anec.id !== id ? anec : changed)
+  case 'INIT_ANECS':
+    return action.data
+  default: return state
   }
 }
 
